@@ -1,12 +1,13 @@
 import './styles.css';
 import bg from './us.png';
 import home from './home';
+import menu from './menu';
 
 
 const content = document.getElementById('content');
 
 function loadPage () {
-    console.log(home().textContent + ' kk');
+    console.log(menu());
     const b = new Image();
     b.src = bg;
 
@@ -16,12 +17,12 @@ function loadPage () {
     const btn_menu = document.createElement('button');
     const btn_contact = document.createElement('button');
     const body_container = document.createElement('div');
-    const body_content = document.createElement('div');
+    // const body_content = document.createElement('div');
 
     banner.classList.add('banner'); 
     navBar.classList.add('nav-bar');
     body_container.classList.add('body-container');
-    body_content.classList.add('body-content');
+    // home().classList.add('body-content');
 
 
     banner.textContent = "Ary's Pastries"; 
@@ -32,7 +33,7 @@ function loadPage () {
     navBar.appendChild(btn_home);
     navBar.appendChild(btn_menu);
     navBar.appendChild(btn_contact);
-    body_container.appendChild(body_content);
+    body_container.appendChild(menu());
 
     content.appendChild(navBar);
     content.appendChild(banner);
