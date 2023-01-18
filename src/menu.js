@@ -1,3 +1,32 @@
+import flans from './images/choco_flan.jpg';
+import empandas from './images/Empanadas_de_cajeta_y_pina.jpeg';
+import roscas from './images/Rosca_de_panque.jpg';
+import besitos from './images/besitos_de_nuez.jpg';
+import galletas from './images/Galletas_con_glaseado.jpeg';
+import pastels from './images/pastel_de_zanahoria.jpg';
+import pays from './images/pay_de_queso_fresco.jpg';
+
+const choco = new Image();
+choco.src = flans;
+
+const empanda = new Image();
+empanda.src = empandas;
+
+const rosca = new Image();
+rosca.src = roscas;
+
+const besito = new Image();
+besito.src = besitos;
+
+const galleta = new Image();
+galleta.src = galletas;
+
+const pay = new Image();
+pay.src = pays;
+
+const pastel = new Image();
+pastel.src = pastels;
+
 function Menu (i, it, d, p) {
     this._img = i;
     this._item = it;
@@ -8,48 +37,48 @@ function Menu (i, it, d, p) {
 let menuObject;
 
 const one = {
-    pi : './images/volteado_de_pina.jpg',
-    it : 'Chocolate Cake',
-    de : 'Tasty inside treat',
+    pi : choco.src,
+    it : 'Choco Flan',
+    de : 'Real chocolate and love.',
     pr : '2.50'
 }
   
 const two = {
-    pi : './images/volteado_de_pina.jpg',
-    it : 'Vanilla Pudding',
-    de : 'Pure genius dessert',
+    pi : rosca.src,
+    it : 'Rosca de Panque',
+    de : 'Pure genius dessert.',
     pr : '1.99'
 }
 
 const three = {
-    pi : './images/volteado_de_pina.jpg',
-    it : 'Dallas Apple Pie',
-    de : 'The best tasty pie in the nation',
+    pi : pay.src,
+    it : 'Pay de Queso Fresco',
+    de : 'The best tasty pie in the nation.',
     pr : '2.75'
 }
   
 const four = {
       
-    pi : './images/volteado_de_pina.jpg',
-    it : 'Buttercup Cakes',
-    de : 'Made with pure love',
+    pi : pastel.src,
+    it : 'Pastel de Zanahoria',
+    de : 'Made with pure love.',
     pr : '1.45'
   
 }
 
 const five = {
       
-    pi : './images/volteado_de_pina.jpg',
-    it : 'Fruity Cakes',
-    de : 'Using real fruits',
+    pi : besito.src,
+    it : 'Besitos de Nuez',
+    de : 'Have a sweet kiss.',
     pr : '.99'
   
 }
   
 const six = {
       
-    pi : './images/volteado_de_pina.jpg',
-    it : 'Coco Puff Treats',
+    pi : empanda.src,
+    it : 'Empanadas de Cajeta',
     de : 'Just try it and you will see',
     pr : '1.50'
   
@@ -65,26 +94,22 @@ const loadMenu = () => {
             myMenu[i].pi,
             myMenu[i].it,
             myMenu[i].de,
-            myMenu[i].pr
-              
+            myMenu[i].pr  
         );  
-        
         addMenu(menuObject);
-    }
-    // console.log(body_content + ' ll')
-    
+    }   
 }
   
 const body_content = document.createElement('div');
 body_content.classList.add('body-content');
 const addMenu = (m) => {
     let x;
-    // const c = document.querySelector('.body-content');
     
     const fetch = body_content.innerHTML
-    
+   
+    console.log(m._img + ' jijkjk')
     x = `<div class="item-container">
-        <img src="./images/choco_flan.jpg" alt="Choco Flan">
+        <img src="${m._img}" alt="${m._description}">
         <div class="info-container">
             <p>${m._item}</p>
             <p>${m._description}</p>
